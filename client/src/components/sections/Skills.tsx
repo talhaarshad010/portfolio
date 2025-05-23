@@ -45,21 +45,12 @@ export default function Skills() {
             </div>
 
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              Hi, I'm Brandon Sanchez, A Digital Product Designer Focused On
-              Creating Easy-To-Use And Visually Appealing Digital Products. I'm
-              Confident My High-Impact Designs Will Leave A Lasting Imprint On
-              Your Project. I'm Excited To Collaborate With Your Brand And
+              Hi, I'm Muhammad Talha Arshad, A React Native Developer Focused On
+              Creating Easy-To-Use And Performant Mobile Applications. I'm
+              Confident My High-Impact Development Skills Will Leave A Lasting Imprint On
+              Your Project. I'm Excited To Collaborate With Your Team And
               Integrate My Passion Into Your Company.
             </p>
-
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400"
-                alt="Brandon Sanchez professional portrait"
-                className="w-64 h-80 object-cover rounded-2xl shadow-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent rounded-2xl"></div>
-            </div>
           </motion.div>
 
           <motion.div

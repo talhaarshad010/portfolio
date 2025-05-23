@@ -5,22 +5,22 @@ import { Download } from "lucide-react";
 
 const experiences = [
   {
-    title: "Senior React Native Developer",
+    title: "Mobile Application Developer",
     period: "02/2023 - Present",
-    company: "Tech Innovations Ltd",
+    company: "Logic Loops Solutions Ltd",
     technologies: ["React Native", "TypeScript", "Redux"],
     description:
-      "Leading mobile app development projects, mentoring junior developers, and implementing best practices for scalable React Native applications.",
+      "Delivered high-impact projects under tight timelines, contributing to a 45% increase in client satisfaction. Maintained 100% on-time delivery, improving overall project throughput by 35%.",
     periodColor: "text-cyan-400 bg-cyan-400/10",
     delay: 0,
   },
   {
-    title: "Junior React Native Developer",
+    title: "Junior Mobile Application Developer",
     period: "08/2022 - 01/2023",
-    company: "StartupHub Solutions",
+    company: "Code Master Innovative Ltd",
     technologies: ["React Native", "JavaScript", "Firebase"],
     description:
-      "Developed cross-platform mobile applications, collaborated with design teams, and gained expertise in React Native ecosystem and mobile development patterns.",
+      "Contributed to the development of web and mobile applications, including e-commerce platforms and multi-user systems, boosting client acquisition by 35%. Reduced overall project delivery time by 20%.",
     periodColor: "text-purple-400 bg-purple-400/10",
     delay: 0.2,
   },

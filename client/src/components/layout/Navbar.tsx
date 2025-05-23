@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import { Link, useLocation } from "wouter";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,9 +16,11 @@ export default function Navbar() {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+    if (location === "/") {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -49,21 +53,34 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            {[
-              { label: "Home", id: "home" },
-              { label: "About", id: "about" },
-              { label: "Services", id: "services" },
-              { label: "Projects", id: "projects" },
-              { label: "Contact", id: "contact" },
-            ].map((item) => (
+            <Link href="/">
               <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => scrollToSection("home")}
                 className="text-gray-300 hover:text-white transition-colors duration-300"
               >
-                {item.label}
+                Home
               </button>
-            ))}
+            </Link>
+            <Link href="/about">
+              <button className="text-gray-300 hover:text-white transition-colors duration-300">
+                About
+              </button>
+            </Link>
+            <Link href="/services">
+              <button className="text-gray-300 hover:text-white transition-colors duration-300">
+                Services
+              </button>
+            </Link>
+            <Link href="/projects">
+              <button className="text-gray-300 hover:text-white transition-colors duration-300">
+                Projects
+              </button>
+            </Link>
+            <Link href="/contact">
+              <button className="text-gray-300 hover:text-white transition-colors duration-300">
+                Contact
+              </button>
+            </Link>
           </motion.div>
 
           <motion.button
