@@ -26,7 +26,7 @@ export default function About() {
               <span className="gradient-text">Since 2022</span>
             </h2>
 
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">
+            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-8">
               As a passionate React Native developer, I specialize in creating
               cross-platform mobile applications that deliver exceptional user
               experiences. My journey in mobile development has led me to work
@@ -61,7 +61,7 @@ export default function About() {
               />
             </div>
 
-            <p className="text-gray-400 text-center">
+            <p className="text-gray-600 dark:text-gray-400 text-center">
               Focused on React Native development with expertise in TypeScript,
               JavaScript, and modern mobile development practices. Always
               learning and adapting to new technologies.

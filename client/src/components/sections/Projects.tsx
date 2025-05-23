@@ -4,32 +4,25 @@ import ProjectCard from "@/components/ui/project-card";
 
 const projects = [
   {
-    title: "Feed Instagram",
-    category: "Social Media",
+    title: "ABET Broker App",
+    category: "React Native",
     image:
-      "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    alt: "Mobile social media app interface design",
+      "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    alt: "ABET Broker mobile app interface with 50+ optimized screens",
   },
   {
-    title: "Web Design",
-    category: "Digital Design",
+    title: "Music Streaming App",
+    category: "React Native",
     image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    alt: "Modern web design on laptop screen",
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    alt: "Cross-platform music streaming app with AWS backend",
   },
   {
-    title: "E-Commerce",
-    category: "Digital Design",
+    title: "My-Brew",
+    category: "Full Stack React",
     image:
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    alt: "E-commerce website design for furniture",
-  },
-  {
-    title: "Mobile App",
-    category: "User Interface",
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
-    alt: "Mobile app user interface design",
+      "https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500",
+    alt: "Full-stack brewing recipe sharing application",
   },
 ];
 

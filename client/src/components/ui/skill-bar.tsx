@@ -42,11 +42,11 @@ export default function SkillBar({
       transition={{ duration: 0.6, delay: delay / 1000 }}
     >
       <div className="flex justify-between items-center mb-3">
-        <h4 className="text-lg font-semibold text-white">{skill}</h4>
+        <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{skill}</h4>
         <span className="text-cyan-400 font-bold">{percentage}%</span>
       </div>
-      <p className="text-gray-400 text-sm mb-3">{description}</p>
-      <div className="bg-gray-800 rounded-full h-2 relative overflow-hidden">
+      <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">{description}</p>
+      <div className="bg-gray-200 dark:bg-gray-800 rounded-full h-2 relative overflow-hidden">
         <div
           ref={progressRef}
           className={`h-2 rounded-full relative transition-all duration-1500 ease-out bg-gradient-to-r ${getGradientColor(
