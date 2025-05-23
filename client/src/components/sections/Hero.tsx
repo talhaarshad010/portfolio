@@ -48,8 +48,8 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              <p className="text-gray-300 text-lg">Design That Speaks,</p>
-              <p className="text-gray-300 text-lg">Experiences That Resonate</p>
+              <p className="text-gray-600 dark:text-gray-300 text-lg">Design That Speaks,</p>
+              <p className="text-gray-600 dark:text-gray-300 text-lg">Experiences That Resonate</p>
             </motion.div>
 
             <motion.div
