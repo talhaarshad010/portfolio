@@ -31,9 +31,9 @@ export default function ServiceCard({
         >
           <Icon className="w-6 h-6 text-white" />
         </div>
-        <h3 className="text-2xl font-bold text-white">{title}</h3>
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{title}</h3>
       </div>
-      <p className="text-gray-400 text-lg leading-relaxed">{description}</p>
+      <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">{description}</p>
     </motion.div>
   );
 }

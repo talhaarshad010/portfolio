@@ -29,12 +29,12 @@ export default function ExperienceItem({
       whileHover={{ y: -5 }}
     >
       <div className="flex justify-between items-start mb-4">
-        <h3 className="text-xl font-bold text-white">{title}</h3>
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
         <span className={`text-sm px-3 py-1 rounded-full ${periodColor}`}>
           {period}
         </span>
       </div>
-      <div className="flex items-center space-x-4 text-gray-400 text-sm mb-3">
+      <div className="flex items-center space-x-4 text-gray-600 dark:text-gray-400 text-sm mb-3">
         <span>{company}</span>
         {technologies.map((tech, index) => (
           <span key={tech}>
@@ -43,7 +43,7 @@ export default function ExperienceItem({
           </span>
         ))}
       </div>
-      <p className="text-gray-400">{description}</p>
+      <p className="text-gray-700 dark:text-gray-400">{description}</p>
     </motion.div>
   );
 }
