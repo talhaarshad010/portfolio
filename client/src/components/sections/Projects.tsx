@@ -49,7 +49,7 @@ export default function Projects() {
             <span className="gradient-text">Works</span>
           </h2>
 
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
             A collection of projects showcasing my expertise in React Native
             development and modern web technologies.
           </p>
