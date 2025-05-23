@@ -54,7 +54,7 @@ export default function About() {
               </div>
 
               <a 
-                href="/assets/Cv.pdf" 
+                href="/Cv.pdf" 
                 download="Muhammad_Talha_Arshad_CV.pdf"
                 className="mt-8 inline-flex items-center space-x-2 text-white gradient-button px-6 py-3 rounded-full"
               >

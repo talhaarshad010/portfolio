@@ -83,10 +83,14 @@ export default function Experience() {
               that stands out in the market.
             </p>
 
-            <button className="inline-flex items-center space-x-2 text-white gradient-button px-8 py-4 rounded-full text-lg">
+            <a 
+              href="/Cv.pdf" 
+              download="Muhammad_Talha_Arshad_CV.pdf"
+              className="inline-flex items-center space-x-2 text-white gradient-button px-8 py-4 rounded-full text-lg"
+            >
               <span>Download CV</span>
               <Download className="w-5 h-5" />
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>
