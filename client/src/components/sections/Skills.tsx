@@ -44,8 +44,8 @@ export default function Skills() {
               <span className="text-cyan-400 font-medium">My Skills</span>
             </div>
 
-            <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              Hi, I'm Muhammad Talha Arshad, A React Native Developer Focused On
+            <p className="text-gray-400 dark:text-gray-400 text-lg leading-relaxed mb-8">
+              Hi, I'm Talha Arshad, A React Native Developer Focused On
               Creating Easy-To-Use And Performant Mobile Applications. I'm
               Confident My High-Impact Development Skills Will Leave A Lasting Imprint On
               Your Project. I'm Excited To Collaborate With Your Team And

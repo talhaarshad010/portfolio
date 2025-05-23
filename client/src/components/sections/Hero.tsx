@@ -14,9 +14,9 @@ export default function Hero() {
             >
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
                 I'm{" "}
-                <span className="gradient-text">Brandon</span>
+                <span className="gradient-text">Talha</span>
                 <br />
-                Sanchez
+                Arshad
               </h1>
             </motion.div>
 
@@ -60,7 +60,7 @@ export default function Hero() {
             >
               <img
                 src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800"
-                alt="Brandon Sanchez - Digital Product Designer"
+                alt="Talha Arshad - React Native Developer"
                 className="w-full max-w-md mx-auto rounded-3xl shadow-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent rounded-3xl"></div>

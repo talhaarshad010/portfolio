@@ -9,7 +9,7 @@ export default function About() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <div className="min-h-screen text-white overflow-x-hidden">
+    <div className="min-h-screen text-foreground overflow-x-hidden">
       <Navbar />
       
       <section className="pt-32 pb-20" ref={ref}>
