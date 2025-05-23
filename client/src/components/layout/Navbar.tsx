@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "wouter";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -83,15 +84,25 @@ export default function Navbar() {
             </Link>
           </motion.div>
 
-          <motion.button
-            className="gradient-button text-white px-6 py-2 rounded-full"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            onClick={() => scrollToSection("contact")}
-          >
-            Hire Me Now
-          </motion.button>
+          <div className="flex items-center space-x-4">
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+            >
+              <ThemeToggle />
+            </motion.div>
+            
+            <motion.button
+              className="gradient-button text-white px-6 py-2 rounded-full"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              onClick={() => scrollToSection("contact")}
+            >
+              Hire Me Now
+            </motion.button>
+          </div>
         </div>
       </div>
     </motion.nav>

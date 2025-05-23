@@ -3,6 +3,36 @@
 @tailwind utilities;
 
 :root {
+  /* Light theme */
+  --background: 0 0% 100%; /* White background */
+  --foreground: 240 10% 3.9%; /* Dark text */
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --primary: 207 90% 54%; /* Indigo blue */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+  
+  /* Custom gradient colors for light theme */
+  --gradient-start: 240 100% 98%; /* #fafaff */
+  --gradient-middle: 240 20% 95%; /* #f1f1f7 */
+  --gradient-end: 215 25% 92%; /* #e8ecf2 */
+}
+
+.dark {
+  /* Dark theme */
   --background: 240 10% 3.9%; /* Dark background */
   --foreground: 0 0% 98%; /* Light text */
   --muted: 240 3.7% 15.9%;
@@ -22,9 +52,8 @@
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
   --ring: 240 4.9% 83.9%;
-  --radius: 0.5rem;
   
-  /* Custom gradient colors for the portfolio */
+  /* Custom gradient colors for dark theme */
   --gradient-start: 240 10% 6%; /* #0f0f23 */
   --gradient-middle: 240 20% 12%; /* #1a1a2e */
   --gradient-end: 215 25% 15%; /* #16213e */
@@ -36,13 +65,14 @@
   }
 
   body {
-    @apply font-sans antialiased text-foreground;
+    @apply font-sans antialiased text-foreground bg-background;
     background: linear-gradient(135deg, 
       hsl(var(--gradient-start)) 0%, 
       hsl(var(--gradient-middle)) 50%, 
       hsl(var(--gradient-end)) 100%
     );
     min-height: 100vh;
+    transition: background 0.3s ease-in-out;
   }
 
   html {
@@ -52,14 +82,12 @@
 
 @layer utilities {
   .glass {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    @apply bg-white/5 dark:bg-white/5 backdrop-blur-md border border-white/10 dark:border-white/10;
   }
 
   .navbar-blur {
     backdrop-filter: blur(20px);
-    background: rgba(15, 15, 35, 0.8);
+    @apply bg-white/80 dark:bg-gray-900/80;
   }
 
   .gradient-text {
