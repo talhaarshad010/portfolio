@@ -48,7 +48,7 @@ export default function About() {
           >
             <div className="grid grid-cols-2 gap-8">
               <AnimatedCounter
-                value={2}
+                value={3}
                 suffix="+"
                 label="Years Of\nExperience"
                 delay={500}

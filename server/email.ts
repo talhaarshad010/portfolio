@@ -1,13 +1,4 @@
-import { MailService } from '@sendgrid/mail';
-
-if (!process.env.SENDGRID_API_KEY) {
-  console.warn("SENDGRID_API_KEY environment variable not set");
-}
-
-const mailService = new MailService();
-if (process.env.SENDGRID_API_KEY) {
-  mailService.setApiKey(process.env.SENDGRID_API_KEY);
-}
+import nodemailer from 'nodemailer';
 
 interface EmailParams {
   to: string;
@@ -17,25 +8,34 @@ interface EmailParams {
   html?: string;
 }
 
+// Create transporter with Gmail SMTP
+const createTransporter = () => {
+  return nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: process.env.EMAIL_USER || 'talhaarshad010@gmail.com',
+      pass: process.env.EMAIL_PASSWORD || 'your-app-password'
+    }
+  });
+};
+
 export async function sendEmail(params: EmailParams): Promise<boolean> {
   try {
-    if (!process.env.SENDGRID_API_KEY) {
-      console.error('SendGrid API key not configured');
-      return false;
-    }
-
-    await mailService.send({
-      to: params.to,
-      from: params.from,
-      subject: params.subject,
-      text: params.text || '',
-      html: params.html || '',
-    });
+    const transporter = createTransporter();
     
-    console.log('Email sent successfully');
+    const mailOptions = {
+      from: params.from,
+      to: params.to,
+      subject: params.subject,
+      text: params.text,
+      html: params.html
+    };
+
+    await transporter.sendMail(mailOptions);
+    console.log('Email sent successfully via Nodemailer');
     return true;
   } catch (error) {
-    console.error('SendGrid email error:', error);
+    console.error('Nodemailer email error:', error);
     return false;
   }
 }

@@ -21,19 +21,43 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
+    if (!formData.name || !formData.email || !formData.subject || !formData.message) return;
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-      setFormData({ name: "", email: "", message: "" });
+
+      const result = await response.json();
+
+      if (result.success) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      } else {
+        toast({
+          title: "Failed to send message",
+          description: result.message || "Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -66,7 +90,7 @@ export default function Contact() {
               <span className="gradient-text">Together</span>
             </h1>
 
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
               Ready to bring your ideas to life with cutting-edge React Native
               development and modern web technologies. Let's discuss your project!
             </p>
@@ -80,15 +104,15 @@ export default function Contact() {
             >
               <div className="space-y-8">
                 <div className="glass rounded-2xl p-8">
-                  <h2 className="text-2xl font-bold mb-6">Get In Touch</h2>
+                  <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Get In Touch</h2>
                   <div className="space-y-6">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
                         <Mail className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="text-gray-400 text-sm">Email Me:</p>
-                        <p className="text-white font-medium">talhaarshad010@gmail.com</p>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">Email Me:</p>
+                        <p className="text-gray-900 dark:text-white font-medium">talhaarshad010@gmail.com</p>
                       </div>
                     </div>
 
@@ -97,8 +121,8 @@ export default function Contact() {
                         <Phone className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="text-gray-400 text-sm">Phone Number:</p>
-                        <p className="text-white font-medium">(+92) 311 238 8611</p>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">Phone Number:</p>
+                        <p className="text-gray-900 dark:text-white font-medium">(+92) 311 238 8611</p>
                       </div>
                     </div>
 
@@ -107,15 +131,15 @@ export default function Contact() {
                         <MapPin className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="text-gray-400 text-sm">Location:</p>
-                        <p className="text-white font-medium">Karachi, Pakistan</p>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">Location:</p>
+                        <p className="text-gray-900 dark:text-white font-medium">Karachi, Pakistan</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="glass rounded-2xl p-8">
-                  <h3 className="text-xl font-bold mb-4">Follow Me</h3>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Follow Me</h3>
                   <div className="flex space-x-4">
                     <a
                       href="#"
@@ -146,7 +170,7 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             >
               <div className="glass rounded-2xl p-8">
-                <h2 className="text-2xl font-bold mb-6">Send Me a Message</h2>
+                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Send Me a Message</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <Input
@@ -166,6 +190,18 @@ export default function Contact() {
                       name="email"
                       placeholder="Your Email"
                       value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <Input
+                      type="text"
+                      name="subject"
+                      placeholder="Subject"
+                      value={formData.subject}
                       onChange={handleInputChange}
                       className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300"
                       required
