@@ -43,9 +43,9 @@ export default function Navbar() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">P</span>
+              <span className="text-white font-bold text-sm">T</span>
             </div>
-            <span className="text-xl font-bold text-white">ortaby</span>
+            <span className="text-xl font-bold text-foreground">alha</span>
           </motion.div>
 
           <motion.div
@@ -57,28 +57,28 @@ export default function Navbar() {
             <Link href="/">
               <button
                 onClick={() => scrollToSection("home")}
-                className="text-gray-300 hover:text-white transition-colors duration-300"
+                className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300"
               >
                 Home
               </button>
             </Link>
             <Link href="/about">
-              <button className="text-gray-300 hover:text-white transition-colors duration-300">
+              <button className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
                 About
               </button>
             </Link>
             <Link href="/services">
-              <button className="text-gray-300 hover:text-white transition-colors duration-300">
+              <button className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
                 Services
               </button>
             </Link>
             <Link href="/projects">
-              <button className="text-gray-300 hover:text-white transition-colors duration-300">
+              <button className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
                 Projects
               </button>
             </Link>
             <Link href="/contact">
-              <button className="text-gray-300 hover:text-white transition-colors duration-300">
+              <button className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300">
                 Contact
               </button>
             </Link>

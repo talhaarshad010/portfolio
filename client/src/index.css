@@ -5,13 +5,13 @@
 :root {
   /* Light theme */
   --background: 0 0% 100%; /* White background */
-  --foreground: 240 10% 3.9%; /* Dark text */
+  --foreground: 0 0% 3.9%; /* Very dark text */
   --muted: 240 4.8% 95.9%;
   --muted-foreground: 240 3.8% 46.1%;
   --popover: 0 0% 100%;
-  --popover-foreground: 240 10% 3.9%;
+  --popover-foreground: 0 0% 3.9%;
   --card: 0 0% 100%;
-  --card-foreground: 240 10% 3.9%;
+  --card-foreground: 0 0% 3.9%;
   --border: 240 5.9% 90%;
   --input: 240 5.9% 90%;
   --primary: 207 90% 54%; /* Indigo blue */
@@ -26,9 +26,9 @@
   --radius: 0.5rem;
   
   /* Custom gradient colors for light theme */
-  --gradient-start: 240 100% 98%; /* #fafaff */
-  --gradient-middle: 240 20% 95%; /* #f1f1f7 */
-  --gradient-end: 215 25% 92%; /* #e8ecf2 */
+  --gradient-start: 250 100% 97%; /* #f8f9ff */
+  --gradient-middle: 240 20% 94%; /* #eeeef5 */
+  --gradient-end: 220 25% 90%; /* #e2e6f0 */
 }
 
 .dark {
@@ -82,12 +82,12 @@
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 dark:bg-white/5 backdrop-blur-md border border-white/10 dark:border-white/10;
+    @apply bg-white/80 dark:bg-white/5 backdrop-blur-md border border-gray-200 dark:border-white/10;
   }
 
   .navbar-blur {
     backdrop-filter: blur(20px);
-    @apply bg-white/80 dark:bg-gray-900/80;
+    @apply bg-white/95 dark:bg-gray-900/80 border-b border-gray-200 dark:border-white/10;
   }
 
   .gradient-text {

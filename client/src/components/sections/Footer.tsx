@@ -47,11 +47,11 @@ export default function Footer() {
             <div className="space-y-6 mb-12">
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-sm">P</span>
+                  <span className="text-white font-bold text-sm">T</span>
                 </div>
-                <span className="text-xl font-bold text-white">ortaby</span>
+                <span className="text-xl font-bold text-foreground">alha Arshad</span>
               </div>
-              <p className="text-gray-400 max-w-md">
+              <p className="text-gray-600 dark:text-gray-400 max-w-md">
                 Ready to bring your ideas to life with cutting-edge React Native
                 development and modern web technologies.
               </p>
@@ -59,18 +59,18 @@ export default function Footer() {
 
             <div className="space-y-4">
               <div>
-                <span className="text-gray-400 text-sm">Email Me:</span>
-                <p className="text-white font-medium">brandon@portaby.com</p>
+                <span className="text-gray-500 dark:text-gray-400 text-sm">Email Me:</span>
+                <p className="text-foreground font-medium">talhaarshad010@gmail.com</p>
               </div>
 
               <div>
-                <span className="text-gray-400 text-sm">Phone Number:</span>
-                <p className="text-white font-medium">(+1) 555 - 123 - 4567</p>
+                <span className="text-gray-500 dark:text-gray-400 text-sm">Phone Number:</span>
+                <p className="text-foreground font-medium">(+92) 311 238 8611</p>
               </div>
 
               <div>
-                <span className="text-gray-400 text-sm">Location:</span>
-                <p className="text-white font-medium">San Francisco, CA</p>
+                <span className="text-gray-500 dark:text-gray-400 text-sm">Location:</span>
+                <p className="text-foreground font-medium">Karachi, Pakistan</p>
               </div>
             </div>
           </motion.div>
@@ -81,11 +81,11 @@ export default function Footer() {
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
             <div className="text-right mb-8">
-              <p className="text-gray-400 mb-2">
+              <p className="text-gray-600 dark:text-gray-400 mb-2">
                 Interested in working together? Let's discuss your project and
                 how I can help bring your vision to reality.
               </p>
-              <p className="text-white font-medium">brandon@portaby.com</p>
+              <p className="text-foreground font-medium">talhaarshad010@gmail.com</p>
               <button className="inline-flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 mt-2">
                 <span>Get In Touch</span>
                 <ArrowRight className="w-4 h-4" />
@@ -136,9 +136,9 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/10 text-center">
-          <p className="text-gray-400 text-sm">
-            Copyright © 2025 Portaby | Powered by Brandon Sanchez
+        <div className="mt-16 pt-8 border-t border-gray-200 dark:border-white/10 text-center">
+          <p className="text-gray-500 dark:text-gray-400 text-sm">
+            Copyright © 2025 Talha Arshad | React Native Developer
           </p>
         </div>
       </div>

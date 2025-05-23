@@ -28,12 +28,12 @@ export default function Hero() {
               <div className="glass rounded-2xl p-6 max-w-md">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-sm text-gray-300">My Skills</span>
-                  <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
-                    <Star className="w-4 h-4" />
+                  <span className="text-sm text-gray-600 dark:text-gray-300">My Skills</span>
+                  <div className="w-8 h-8 bg-gray-200 dark:bg-white/10 rounded-full flex items-center justify-center">
+                    <Star className="w-4 h-4 text-gray-600 dark:text-white" />
                   </div>
                 </div>
-                <p className="text-sm text-gray-400">
+                <p className="text-sm text-gray-700 dark:text-gray-400">
                   Expert React Native developer with expertise in TypeScript,
                   Next.js, and modern mobile app development.
                 </p>
