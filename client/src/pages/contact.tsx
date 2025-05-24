@@ -6,7 +6,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowRight, Facebook, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import {
+  ArrowRight,
+  Facebook,
+  Twitter,
+  Youtube,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 
 export default function Contact() {
   const { ref, isVisible } = useScrollAnimation();
@@ -14,22 +22,28 @@ export default function Contact() {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) return;
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.subject ||
+      !formData.message
+    )
+      return;
 
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
@@ -60,17 +74,19 @@ export default function Contact() {
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
       <Navbar />
-      
+
       <section className="pt-32 pb-20" ref={ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -92,7 +108,8 @@ export default function Contact() {
 
             <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
               Ready to bring your ideas to life with cutting-edge React Native
-              development and modern web technologies. Let's discuss your project!
+              development and modern web technologies. Let's discuss your
+              project!
             </p>
           </motion.div>
 
@@ -104,15 +121,21 @@ export default function Contact() {
             >
               <div className="space-y-8">
                 <div className="glass rounded-2xl p-8">
-                  <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Get In Touch</h2>
+                  <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                    Get In Touch
+                  </h2>
                   <div className="space-y-6">
                     <div className="flex items-center space-x-4">
                       <div className="w-12 h-12 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
                         <Mail className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm">Email Me:</p>
-                        <p className="text-gray-900 dark:text-white font-medium">talhaarshad010@gmail.com</p>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">
+                          Email Me:
+                        </p>
+                        <p className="text-gray-900 dark:text-white font-medium">
+                          talhaarshad010@gmail.com
+                        </p>
                       </div>
                     </div>
 
@@ -121,8 +144,12 @@ export default function Contact() {
                         <Phone className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm">Phone Number:</p>
-                        <p className="text-gray-900 dark:text-white font-medium">(+92) 311 238 8611</p>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">
+                          Phone Number:
+                        </p>
+                        <p className="text-gray-900 dark:text-white font-medium">
+                          (+92) 311 238 8611
+                        </p>
                       </div>
                     </div>
 
@@ -131,33 +158,39 @@ export default function Contact() {
                         <MapPin className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm">Location:</p>
-                        <p className="text-gray-900 dark:text-white font-medium">Karachi, Pakistan</p>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm">
+                          Location:
+                        </p>
+                        <p className="text-gray-900 dark:text-white font-medium">
+                          Karachi, Pakistan
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="glass rounded-2xl p-8">
-                  <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">Follow Me</h3>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white">
+                    Follow Me
+                  </h3>
                   <div className="flex space-x-4">
                     <a
                       href="#"
-                      className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
+                      className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
                     >
-                      <Facebook className="w-6 h-6 text-white" />
+                      <Facebook className="w-5 h-5 text-black dark:text-white" />
                     </a>
                     <a
                       href="#"
-                      className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
+                      className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
                     >
-                      <Twitter className="w-6 h-6 text-white" />
+                      <Twitter className="w-5 h-5 text-black dark:text-white" />
                     </a>
                     <a
                       href="#"
-                      className="w-12 h-12 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
+                      className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
                     >
-                      <Youtube className="w-6 h-6 text-white" />
+                      <Youtube className="w-5 h-5 text-black dark:text-white" />
                     </a>
                   </div>
                 </div>
@@ -170,7 +203,9 @@ export default function Contact() {
               transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             >
               <div className="glass rounded-2xl p-8">
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Send Me a Message</h2>
+                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                  Send Me a Message
+                </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <Input

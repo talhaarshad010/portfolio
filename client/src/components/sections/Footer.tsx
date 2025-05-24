@@ -49,7 +49,9 @@ export default function Footer() {
                 <div className="w-8 h-8 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
                   <span className="text-white font-bold text-sm">T</span>
                 </div>
-                <span className="text-xl font-bold text-foreground">alha Arshad</span>
+                <span className="text-xl font-bold text-foreground">
+                  alha Arshad
+                </span>
               </div>
               <p className="text-gray-600 dark:text-gray-400 max-w-md">
                 Ready to bring your ideas to life with cutting-edge React Native
@@ -59,17 +61,27 @@ export default function Footer() {
 
             <div className="space-y-4">
               <div>
-                <span className="text-gray-500 dark:text-gray-400 text-sm">Email Me:</span>
-                <p className="text-foreground font-medium">talhaarshad010@gmail.com</p>
+                <span className="text-gray-500 dark:text-gray-400 text-sm">
+                  Email Me:
+                </span>
+                <p className="text-foreground font-medium">
+                  talhaarshad010@gmail.com
+                </p>
               </div>
 
               <div>
-                <span className="text-gray-500 dark:text-gray-400 text-sm">Phone Number:</span>
-                <p className="text-foreground font-medium">(+92) 311 238 8611</p>
+                <span className="text-gray-500 dark:text-gray-400 text-sm">
+                  Phone Number:
+                </span>
+                <p className="text-foreground font-medium">
+                  (+92) 311 238 8611
+                </p>
               </div>
 
               <div>
-                <span className="text-gray-500 dark:text-gray-400 text-sm">Location:</span>
+                <span className="text-gray-500 dark:text-gray-400 text-sm">
+                  Location:
+                </span>
                 <p className="text-foreground font-medium">Karachi, Pakistan</p>
               </div>
             </div>
@@ -85,7 +97,9 @@ export default function Footer() {
                 Interested in working together? Let's discuss your project and
                 how I can help bring your vision to reality.
               </p>
-              <p className="text-foreground font-medium">talhaarshad010@gmail.com</p>
+              <p className="text-foreground font-medium">
+                talhaarshad010@gmail.com
+              </p>
               <button className="inline-flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300 mt-2">
                 <span>Get In Touch</span>
                 <ArrowRight className="w-4 h-4" />
@@ -99,7 +113,7 @@ export default function Footer() {
                   placeholder="Email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300"
+                  className="w-full bg-gray-50 dark:bg-white/5 border border-gray-300 dark:border-white/10 rounded-xl px-6 py-4 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/20 transition-all duration-300"
                   required
                 />
               </div>
@@ -116,21 +130,21 @@ export default function Footer() {
             <div className="flex space-x-4 mt-8 justify-end">
               <a
                 href="#"
-                className="w-10 h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
+                className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
               >
-                <Facebook className="w-5 h-5 text-white" />
+                <Facebook className="w-5 h-5 text-black dark:text-white" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
+                className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
               >
-                <Twitter className="w-5 h-5 text-white" />
+                <Twitter className="w-5 h-5 text-black dark:text-white" />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
+                className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
               >
-                <Youtube className="w-5 h-5 text-white" />
+                <Youtube className="w-5 h-5 text-black dark:text-white" />
               </a>
             </div>
           </motion.div>

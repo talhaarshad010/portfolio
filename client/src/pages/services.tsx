@@ -30,7 +30,7 @@ export default function Services() {
   return (
     <div className="min-h-screen text-foreground overflow-x-hidden">
       <Navbar />
-      
+
       <section className="pt-32 pb-20" ref={ref}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center mb-16">
@@ -44,12 +44,14 @@ export default function Services() {
                 <span className="text-cyan-400 font-medium">My Services</span>
               </div>
 
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6">What I Do?</h1>
+              <h1 className="text-gray-900 dark:text-white text-4xl lg:text-6xl font-bold mb-6">
+                What I Do?
+              </h1>
 
-              <p className="text-gray-400 text-lg max-w-2xl">
+              <p className="text-gray-700 dark:text-gray-300 text-lg max-w-2xl">
                 I specialize in React Native mobile development and modern web
-                technologies, creating seamless digital experiences that engage users
-                and drive results.
+                technologies, creating seamless digital experiences that engage
+                users and drive results.
               </p>
             </motion.div>
 
@@ -79,47 +81,64 @@ export default function Services() {
           </div>
 
           <motion.div
-            className="glass rounded-3xl p-8 lg:p-12"
+            className="glass rounded-3xl p-8 lg:p-12 bg-white/10 dark:bg-white/10"
             initial={{ opacity: 0, y: 30 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           >
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+                <h2 className="text-gray-900 dark:text-white text-3xl lg:text-4xl font-bold mb-6">
                   Why Choose <span className="gradient-text">My Services?</span>
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2"></div>
-                    <p className="text-gray-400">
-                      <span className="text-white font-semibold">Performance Focused:</span> Optimized applications with 25% faster load times
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <span className="text-gray-900 dark:text-white font-semibold">
+                        Performance Focused:
+                      </span>{" "}
+                      Optimized applications with 25% faster load times
                     </p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2"></div>
-                    <p className="text-gray-400">
-                      <span className="text-white font-semibold">Clean Code:</span> Maintainable and scalable code architecture
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <span className="text-gray-900 dark:text-white font-semibold">
+                        Clean Code:
+                      </span>{" "}
+                      Maintainable and scalable code architecture
                     </p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2"></div>
-                    <p className="text-gray-400">
-                      <span className="text-white font-semibold">Timely Delivery:</span> 100% on-time delivery with 45% increase in client satisfaction
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <span className="text-gray-900 dark:text-white font-semibold">
+                        Timely Delivery:
+                      </span>{" "}
+                      100% on-time delivery with 45% increase in client
+                      satisfaction
                     </p>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2"></div>
-                    <p className="text-gray-400">
-                      <span className="text-white font-semibold">User Experience:</span> 30% improvement in user retention through intuitive design
+                    <p className="text-gray-700 dark:text-gray-300">
+                      <span className="text-gray-900 dark:text-white font-semibold">
+                        User Experience:
+                      </span>{" "}
+                      30% improvement in user retention through intuitive design
                     </p>
                   </div>
                 </div>
               </div>
               <div className="text-center lg:text-right">
-                <div className="inline-block glass rounded-2xl p-6">
-                  <div className="text-4xl font-bold gradient-text mb-2">45%</div>
-                  <p className="text-gray-400">Client Satisfaction Increase</p>
+                <div className="inline-block glass rounded-2xl p-6 bg-white/20 dark:bg-white/20">
+                  <div className="text-4xl font-bold gradient-text mb-2">
+                    45%
+                  </div>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    Client Satisfaction Increase
+                  </p>
                 </div>
               </div>
             </div>

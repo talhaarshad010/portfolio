@@ -13,8 +13,7 @@ export default function Hero() {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
-                I'm{" "}
-                <span className="gradient-text">Talha</span>
+                I'm <span className="gradient-text">Talha</span>
                 <br />
                 Arshad
               </h1>
@@ -28,7 +27,9 @@ export default function Hero() {
               <div className="glass rounded-2xl p-6 max-w-md">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-sm text-gray-600 dark:text-gray-300">My Skills</span>
+                  <span className="text-sm text-gray-600 dark:text-gray-300">
+                    My Skills
+                  </span>
                   <div className="w-8 h-8 bg-gray-200 dark:bg-white/10 rounded-full flex items-center justify-center">
                     <Star className="w-4 h-4 text-gray-600 dark:text-white" />
                   </div>
@@ -48,8 +49,12 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             >
-              <p className="text-gray-600 dark:text-gray-300 text-lg">Design That Speaks,</p>
-              <p className="text-gray-600 dark:text-gray-300 text-lg">Experiences That Resonate</p>
+              <p className="text-gray-600 dark:text-gray-300 text-lg">
+                Design That Speaks,
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 text-lg">
+                Experiences That Resonate
+              </p>
             </motion.div>
 
             <motion.div
@@ -59,7 +64,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             >
               <img
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=800"
+                src="/public/images/photo.jpg"
                 alt="Talha Arshad - React Native Developer"
                 className="w-full max-w-md mx-auto rounded-3xl shadow-2xl"
               />

@@ -34,7 +34,9 @@ export default function ProjectCard({
       </div>
       <div className="p-6">
         <div className="flex justify-between items-start mb-4">
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
+          <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+            {title}
+          </h3>
           <span className="text-sm text-gray-600 dark:text-gray-400 bg-gray-200 dark:bg-white/10 px-3 py-1 rounded-full">
             {category}
           </span>
