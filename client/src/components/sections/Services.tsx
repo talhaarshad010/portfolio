@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import ServiceCard from "@/components/ui/service-card";
 import { Code, Smartphone, ArrowRight } from "lucide-react";
+import { navigate } from "wouter/use-browser-location";
 
 const services = [
   {
@@ -52,7 +53,12 @@ export default function Services() {
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            <button className="hidden lg:inline-flex items-center space-x-2 text-white gradient-button px-6 py-3 rounded-full">
+            <button
+              onClick={() => {
+                navigate("/contact");
+              }}
+              className="hidden lg:inline-flex items-center space-x-2 text-white gradient-button px-6 py-3 rounded-full"
+            >
               <span>Give Me Feedback</span>
               <ArrowRight className="w-4 h-4" />
             </button>

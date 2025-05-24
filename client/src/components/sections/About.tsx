@@ -34,10 +34,10 @@ export default function About() {
               applications.
             </p>
 
-            <button className="inline-flex items-center space-x-2 text-white gradient-button px-6 py-3 rounded-full">
+            {/* <button className="inline-flex items-center space-x-2 text-white gradient-button px-6 py-3 rounded-full">
               <span>More About Me</span>
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </button> */}
           </motion.div>
 
           <motion.div

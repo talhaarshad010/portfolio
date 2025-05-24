@@ -4,7 +4,13 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { ArrowRight, Facebook, Twitter, Youtube } from "lucide-react";
+import {
+  ArrowRight,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+} from "lucide-react";
 
 export default function Footer() {
   const { ref, isVisible } = useScrollAnimation();
@@ -18,15 +24,41 @@ export default function Footer() {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Successfully subscribed!",
-        description: "Thank you for your interest. I'll be in touch soon.",
+    try {
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }), // send only email as backend expects
       });
-      setEmail("");
+
+      const result = await response.json();
+
+      console.log("object", result);
+
+      if (result.success) {
+        toast({
+          title: "Successfully subscribed!",
+          description: "Thank you for subscribing. I'll be in touch soon.",
+        });
+        setEmail("");
+      } else {
+        toast({
+          title: "Subscription failed",
+          description: result.message || "Please try again later.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
@@ -129,22 +161,28 @@ export default function Footer() {
 
             <div className="flex space-x-4 mt-8 justify-end">
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=100087471951905"
                 className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
               >
                 <Facebook className="w-5 h-5 text-black dark:text-white" />
               </a>
               <a
-                href="#"
+                href="https://x.com/talhaarshad010"
                 className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
               >
                 <Twitter className="w-5 h-5 text-black dark:text-white" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/_talharshad_/"
                 className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
               >
-                <Youtube className="w-5 h-5 text-black dark:text-white" />
+                <Instagram className="w-5 h-5 text-black dark:text-white" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/talha-arshad-42011120a/"
+                className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
+              >
+                <Linkedin className="w-5 h-5 text-black dark:text-white" />
               </a>
             </div>
           </motion.div>

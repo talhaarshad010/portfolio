@@ -13,7 +13,9 @@ import {
   Youtube,
   Mail,
   Phone,
+  Instagram,
   MapPin,
+  Linkedin,
 } from "lucide-react";
 
 export default function Contact() {
@@ -175,22 +177,28 @@ export default function Contact() {
                   </h3>
                   <div className="flex space-x-4">
                     <a
-                      href="#"
+                      href="https://www.facebook.com/profile.php?id=100087471951905"
                       className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
                     >
                       <Facebook className="w-5 h-5 text-black dark:text-white" />
                     </a>
                     <a
-                      href="#"
+                      href="https://x.com/talhaarshad010"
                       className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
                     >
                       <Twitter className="w-5 h-5 text-black dark:text-white" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.instagram.com/_talharshad_/"
                       className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
                     >
-                      <Youtube className="w-5 h-5 text-black dark:text-white" />
+                      <Instagram className="w-5 h-5 text-black dark:text-white" />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/talha-arshad-42011120a/"
+                      className="w-10 h-10 bg-white/5 border border-gray-300 dark:border-white/10 rounded-lg flex items-center justify-center hover:bg-indigo-600 transition-colors duration-300"
+                    >
+                      <Linkedin className="w-5 h-5 text-black dark:text-white" />
                     </a>
                   </div>
                 </div>

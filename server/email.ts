@@ -12,7 +12,9 @@ interface EmailParams {
 // Create transporter with Gmail SMTP
 const createTransporter = () => {
   return nodemailer.createTransport({
-    service: "gmail",
+    host: "d1.my-control-panel.com",
+    port: 465,
+    secure: true,
     auth: {
       user: process.env.EMAIL_USER,
       pass: process.env.EMAIL_PASSWORD,
@@ -27,7 +29,7 @@ export async function sendEmail(params: EmailParams): Promise<boolean> {
     const transporter = createTransporter();
 
     const mailOptions = {
-      from: process.env.EMAIL_USER, // must match your Gmail address
+      from: process.env.EMAIL_USER, // 👈 force this to match your SMTP login
       to: params.to,
       subject: params.subject,
       text: params.text,
