@@ -1,62 +1,34 @@
-import { users, type User, type InsertUser, type Contact, type InsertContact } from "@shared/schema";
+import { UserModel, IUser } from "./models/User";
+import { ContactModel, IContact } from "./models/Contact";
 
-// modify the interface with any CRUD methods
-// you might need
+export const storage = {
+  async getUser(id: string): Promise<IUser | null> {
+    return await UserModel.findById(id).exec();
+  },
 
-export interface IStorage {
-  getUser(id: number): Promise<User | undefined>;
-  getUserByUsername(username: string): Promise<User | undefined>;
-  createUser(user: InsertUser): Promise<User>;
-  createContact(contact: InsertContact): Promise<Contact>;
-  getContacts(): Promise<Contact[]>;
-}
+  async getUserByUsername(username: string): Promise<IUser | null> {
+    return await UserModel.findOne({ username }).exec();
+  },
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  private contacts: Map<number, Contact>;
-  private currentUserId: number;
-  private currentContactId: number;
+  async createUser(userData: {
+    username: string;
+    password: string;
+  }): Promise<IUser> {
+    const user = new UserModel(userData);
+    return await user.save();
+  },
 
-  constructor() {
-    this.users = new Map();
-    this.contacts = new Map();
-    this.currentUserId = 1;
-    this.currentContactId = 1;
-  }
+  async createContact(contactData: {
+    name: string;
+    email: string;
+    subject: string;
+    message: string;
+  }): Promise<IContact> {
+    const contact = new ContactModel(contactData);
+    return await contact.save();
+  },
 
-  async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
-  }
-
-  async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
-  }
-
-  async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.currentUserId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
-    return user;
-  }
-
-  async createContact(insertContact: InsertContact): Promise<Contact> {
-    const id = this.currentContactId++;
-    const contact: Contact = { 
-      ...insertContact, 
-      id,
-      createdAt: new Date()
-    };
-    this.contacts.set(id, contact);
-    return contact;
-  }
-
-  async getContacts(): Promise<Contact[]> {
-    return Array.from(this.contacts.values()).sort(
-      (a, b) => b.createdAt.getTime() - a.createdAt.getTime()
-    );
-  }
-}
-
-export const storage = new MemStorage();
+  async getContacts(): Promise<IContact[]> {
+    return await ContactModel.find().sort({ createdAt: -1 }).exec();
+  },
+};
