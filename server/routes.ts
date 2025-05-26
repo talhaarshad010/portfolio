@@ -7,6 +7,7 @@ import { sendEmail, createContactEmailHTML } from "./email";
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
   app.post("/api/contact", async (req, res) => {
+    console.log("Contact request body:", req.body);
     try {
       // Validate the request body
       const validatedData = insertContactSchema.parse(req.body);
